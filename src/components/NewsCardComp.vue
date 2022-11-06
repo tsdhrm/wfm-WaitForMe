@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col w-screen">
-    <div class="items-center justify-center flex flex-row uppercase tracking-widest font-bold mb-3 text-gray-400">Randomly-picked News</div>
+    <div class="items-center justify-center flex flex-row uppercase tracking-widest font-medium mb-3 text-gray-400 text-sm">Randomly-picked News</div>
     <div class="relative flex flex-row h-full">
       <!-- <img class="rounded-md brightness-50" src="../assets/card-bg.jpg"> -->
       <img class="rounded-md object-cover brightness-50" :src="selectedArticles.urlToImage">

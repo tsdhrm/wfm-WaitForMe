@@ -69,15 +69,9 @@ export default {
       meetingPlatform:'',
       selected: '',
       avalMinutes: this.getAvalMins(5, 60),
-      allData:{
-        mtitle:this.meetingTitle,
-        orgName: this.organizationName,
-        mplt: this.meetingPlatform,
-        duration: this.selected,
-        
-      }
     }
   },
+  props:['myprop'],
   methods:{
     getCurrentTime:function(){
       const currentDate = new Date();
@@ -97,7 +91,20 @@ export default {
       return avMin;
     },
     proceeds:function(){
-      console.log('hi');
+      let data = {
+        "title": this.meetingTitle,
+        "orgName":this.organizationName,
+        "meetForm":this.meetingPlatform,
+        "duration": this.selected
+      };
+      let all = data.title+"_"+data.orgName+"_"+data.meetForm+"_"+data.duration
+      this.$router.push({
+        name:'display',
+        params:{
+          id:all,
+        }
+      })
+
       
       
     }
